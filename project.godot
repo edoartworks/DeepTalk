@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="LifeCards"
+config/name="Deep Talk"
 run/main_scene="res://Game/screen_main.tscn"
 config/quit_on_go_back=false
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 run/low_processor_mode=true
 config/icon="res://Art/app_icon.png"
 

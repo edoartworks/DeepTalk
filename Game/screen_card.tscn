@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://misl3tfjpq0x"]
+[gd_scene format=3 uid="uid://misl3tfjpq0x"]
 
 [ext_resource type="Script" uid="uid://dol8k0s0na56l" path="res://Game/screen_card.gd" id="1_6i3pm"]
 [ext_resource type="Texture2D" uid="uid://g70ufsqhcejp" path="res://Art/icon_cancel_small.png" id="2_vexda"]
@@ -9,27 +9,45 @@
 [ext_resource type="Texture2D" uid="uid://758uvwgicrj2" path="res://Art/icon_arrow.png" id="6_vlu3g"]
 [ext_resource type="PackedScene" uid="uid://d1f7oecpsrav" path="res://Game/card_menu.tscn" id="7_8jahr"]
 [ext_resource type="Script" uid="uid://b113hey6c53hu" path="res://Game/swipe_area.gd" id="7_8lvu1"]
+[ext_resource type="Texture2D" uid="uid://llvlin0jugsr" path="res://Art/icon_menu.png" id="7_dypvr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5oel"]
+bg_color = Color(0.941176, 0.909804, 0.835294, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6es5q"]
 bg_color = Color(1, 0.683554, 0.938661, 1)
 
-[node name="screen_card" type="CanvasLayer"]
+[node name="screen_card" type="CanvasLayer" unique_id=1437690645]
 script = ExtResource("1_6i3pm")
-card_path = NodePath("BG/cont_margin/VBoxContainer/card")
+card_path = NodePath("BG/cont_margin/VBoxContainer/PanelContainer/card")
 menu_overlay_path = NodePath("card_menu_overlay")
 prog_bar_path = NodePath("BG/cont_margin/VBoxContainer/progress_bar_deck")
-categ_art_path = NodePath("BG/cont_margin/VBoxContainer/category_art")
+categ_art_path = NodePath("BG/category_art")
+debug_toggle_log = NodePath("BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_toggle_debug_log")
 debug_log_lbl_path = NodePath("BG/cont_margin/VBoxContainer/cont_debug_log/lbl_debug_log")
 
-[node name="BG" type="Panel" parent="."]
+[node name="BG" type="Panel" parent="." unique_id=1819493226]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s5oel")
 
-[node name="swipe_area" type="ReferenceRect" parent="BG"]
+[node name="category_art" type="TextureRect" parent="BG" unique_id=1964285214]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.731
+anchor_right = 1.0
+anchor_bottom = 0.731
+offset_top = -0.07507324
+offset_bottom = 76.80005
+size_flags_vertical = 8
+texture = ExtResource("5_4jntk")
+expand_mode = 5
+
+[node name="swipe_area" type="ReferenceRect" parent="BG" unique_id=431356661]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +60,7 @@ border_width = 0.0
 editor_only = false
 script = ExtResource("7_8lvu1")
 
-[node name="cont_margin" type="MarginContainer" parent="BG"]
+[node name="cont_margin" type="MarginContainer" parent="BG" unique_id=649009339]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,33 +72,33 @@ theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 60
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BG/cont_margin"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/cont_margin" unique_id=1058188101]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BG/cont_margin/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/cont_margin/VBoxContainer" unique_id=1253517254]
 layout_mode = 2
 
-[node name="spacer" type="Control" parent="BG/cont_margin/VBoxContainer/HBoxContainer"]
+[node name="spacer" type="Control" parent="BG/cont_margin/VBoxContainer/HBoxContainer" unique_id=1558500151]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="btn_exit" type="Button" parent="BG/cont_margin/VBoxContainer/HBoxContainer"]
+[node name="btn_exit" type="Button" parent="BG/cont_margin/VBoxContainer/HBoxContainer" unique_id=1243362648]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("2_vexda")
 
-[node name="spacer2" type="Control" parent="BG/cont_margin/VBoxContainer/HBoxContainer"]
+[node name="spacer2" type="Control" parent="BG/cont_margin/VBoxContainer/HBoxContainer" unique_id=1817469969]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.02
 
-[node name="spacer3" type="Control" parent="BG/cont_margin/VBoxContainer"]
+[node name="spacer3" type="Control" parent="BG/cont_margin/VBoxContainer" unique_id=35074462]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="progress_bar_deck" type="ProgressBar" parent="BG/cont_margin/VBoxContainer"]
+[node name="progress_bar_deck" type="ProgressBar" parent="BG/cont_margin/VBoxContainer" unique_id=1769112089]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 mouse_filter = 2
@@ -89,83 +107,84 @@ value = 1.0
 rounded = true
 show_percentage = false
 
-[node name="spacer4" type="Control" parent="BG/cont_margin/VBoxContainer"]
+[node name="spacer4" type="Control" parent="BG/cont_margin/VBoxContainer" unique_id=1139060245]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="card" parent="BG/cont_margin/VBoxContainer" instance=ExtResource("3_80x67")]
+[node name="PanelContainer" type="PanelContainer" parent="BG/cont_margin/VBoxContainer" unique_id=96626340]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"PanelContainer_Card"
+
+[node name="card" parent="BG/cont_margin/VBoxContainer/PanelContainer" unique_id=640982429 instance=ExtResource("3_80x67")]
 layout_mode = 2
 
-[node name="spacer5" type="Control" parent="BG/cont_margin/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="category_art" type="TextureRect" parent="BG/cont_margin/VBoxContainer"]
-custom_minimum_size = Vector2(0, 72)
-layout_mode = 2
-texture = ExtResource("5_4jntk")
-expand_mode = 5
-
-[node name="spacer7" type="Control" parent="BG/cont_margin/VBoxContainer"]
+[node name="spacer7" type="Control" parent="BG/cont_margin/VBoxContainer" unique_id=1495025579]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.08
 
-[node name="cont_btns_bg" type="PanelContainer" parent="BG/cont_margin/VBoxContainer"]
+[node name="cont_btns_bg" type="PanelContainer" parent="BG/cont_margin/VBoxContainer" unique_id=438057141]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="cont_btns" type="HBoxContainer" parent="BG/cont_margin/VBoxContainer/cont_btns_bg"]
+[node name="cont_btns" type="HBoxContainer" parent="BG/cont_margin/VBoxContainer/cont_btns_bg" unique_id=759165227]
 layout_mode = 2
 alignment = 1
 
-[node name="spacer3" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="spacer3" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=1429954546]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="btn_menu" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="btn_menu" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=2085912919]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("5_pv87m")
 
-[node name="spacer5" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="btn_toggle_debug_log" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=631714216]
+visible = false
+layout_mode = 2
+theme_type_variation = &"Button_Icon_BG"
+icon = ExtResource("7_dypvr")
+
+[node name="spacer5" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=132435792]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="spacer7" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="spacer7" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=1470331506]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 
-[node name="btn_back" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="btn_back" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=969596950]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 action_mode = 0
 icon = ExtResource("6_8r6ww")
 icon_alignment = 1
 
-[node name="spacer4" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="spacer4" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=2046802179]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="btn_fwd" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="btn_fwd" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=115843028]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 action_mode = 0
 icon = ExtResource("6_vlu3g")
 icon_alignment = 1
 
-[node name="spacer6" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns"]
+[node name="spacer6" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=500002425]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="cont_debug_log" type="ScrollContainer" parent="BG/cont_margin/VBoxContainer"]
+[node name="cont_debug_log" type="ScrollContainer" parent="BG/cont_margin/VBoxContainer" unique_id=602257840]
 visible = false
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -174,7 +193,7 @@ size_flags_stretch_ratio = 0.3
 theme_override_styles/panel = SubResource("StyleBoxFlat_6es5q")
 follow_focus = true
 
-[node name="lbl_debug_log" type="Label" parent="BG/cont_margin/VBoxContainer/cont_debug_log"]
+[node name="lbl_debug_log" type="Label" parent="BG/cont_margin/VBoxContainer/cont_debug_log" unique_id=700413616]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -183,16 +202,16 @@ theme_override_font_sizes/font_size = 40
 text = "DEBUG"
 vertical_alignment = 2
 
-[node name="spacer6" type="Control" parent="BG/cont_margin/VBoxContainer"]
+[node name="spacer6" type="Control" parent="BG/cont_margin/VBoxContainer" unique_id=1764324922]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.09
 
-[node name="card_menu_overlay" type="CanvasLayer" parent="."]
+[node name="card_menu_overlay" type="CanvasLayer" parent="." unique_id=1279513236]
 layer = 99
 visible = false
 
-[node name="obscure" type="Panel" parent="card_menu_overlay"]
+[node name="obscure" type="Panel" parent="card_menu_overlay" unique_id=1997528906]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -200,7 +219,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"Panel_Obscure"
 
-[node name="card_menu" parent="card_menu_overlay" instance=ExtResource("7_8jahr")]
+[node name="card_menu" parent="card_menu_overlay" unique_id=793760985 instance=ExtResource("7_8jahr")]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -214,6 +233,7 @@ pivot_offset = Vector2(0, 310)
 
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/HBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_menu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_toggle_debug_log" to="." method="_on_btn_toggle_debug_log_pressed"]
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_back" to="." method="_on_btn_back_pressed"]
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_fwd" to="." method="_on_btn_fwd_pressed"]
 [connection signal="gui_input" from="card_menu_overlay/obscure" to="." method="_on_obscure_gui_input"]

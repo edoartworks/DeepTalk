@@ -37,8 +37,8 @@ theme_override_constants/separation = 15
 [node name="lbl_title" type="Label" parent="BG/MarginContainer/cont_main"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_type_variation = &"Label_Title"
-text = "LIFE CARDS"
+theme_type_variation = &"Label_Subtitle"
+text = "DEEP TALK"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,20 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://by76aqaw7clul"]
+[gd_scene format=3 uid="uid://by76aqaw7clul"]
 
 [ext_resource type="Script" uid="uid://lbuw4xywxa7i" path="res://Game/card.gd" id="2_gyovr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2e7p"]
-content_margin_left = 40.0
-content_margin_top = 40.0
-content_margin_right = 10.0
-content_margin_bottom = 40.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3ab1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oa1mv"]
 font_size = 114
-font_color = Color(0, 0, 0, 1)
-outline_size = 6
+font_color = Color(0.0431373, 0.278431, 0.282353, 1)
 outline_color = Color(0.7068, 0.93, 0.92256, 1)
 
-[node name="card" type="Control"]
+[node name="card" type="Control" unique_id=1520248391]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -28,20 +23,20 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_gyovr")
 
-[node name="cont_text" type="PanelContainer" parent="."]
+[node name="cont_text" type="PanelContainer" parent="." unique_id=494601306]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_a2e7p")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m3ab1")
 
-[node name="lbl_card_text" type="Label" parent="cont_text"]
+[node name="lbl_card_text" type="Label" parent="cont_text" unique_id=137600943]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_vertical = 1
-text = "Lorem ipsum and all of that. The brown laxy fox jumped over the nice kind frog or something like that?"
+text = "Looking back to yourself as a child, what did you like about yourself in the way you used to act or speak?"
 label_settings = SubResource("LabelSettings_oa1mv")
 autowrap_mode = 3
 clip_text = true

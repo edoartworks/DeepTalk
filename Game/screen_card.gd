@@ -4,11 +4,13 @@ extends CanvasLayer
 @export var menu_overlay_path :NodePath
 @export var prog_bar_path :NodePath
 @export var categ_art_path :NodePath
+@export var debug_toggle_log :NodePath
 @export var debug_log_lbl_path :NodePath
 var CARD :Node = null
 var MENU_OVERLAY :Node = null
 var PROG_BAR :ProgressBar = null
 var CATEG_ART :TextureRect = null
+var DEBUG_TOGGLE_LOG :Node = null
 var DEBUG_LOG :Node = null
 var DEBUG_SCROLL :Node = null
 
@@ -39,6 +41,8 @@ func _ready() -> void:
 	SignalBus.cardmenu_goto_first.connect(_on_menu_goto_first_pressed)
 	
 	if Main.DEBUG_MODE:
+		DEBUG_TOGGLE_LOG = get_node(debug_toggle_log)
+		DEBUG_TOGGLE_LOG.visible = true
 		DEBUG_LOG = get_node(debug_log_lbl_path)
 		DEBUG_SCROLL = DEBUG_LOG.get_parent()
 		DEBUG_SCROLL.visible = true
@@ -172,3 +176,7 @@ func _on_menu_goto_first_pressed() -> void:
 		_set_card_to_first()
 	else:
 		Debug.log("Already at first questions")
+
+
+func _on_btn_toggle_debug_log_pressed() -> void:
+	DEBUG_SCROLL.visible = !DEBUG_SCROLL.visible

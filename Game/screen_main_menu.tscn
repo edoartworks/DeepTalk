@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://do5i6g52xs23h"]
+[gd_scene format=3 uid="uid://do5i6g52xs23h"]
 
 [ext_resource type="Texture2D" uid="uid://mp5ihfvdta5v" path="res://Art/art_main_menu.png" id="1_7mw7c"]
 [ext_resource type="Texture2D" uid="uid://cjandkwd2k8ao" path="res://Art/icon_play.png" id="1_jjcyo"]
@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://myq5nitciwec" path="res://Art/icon_settings.png" id="2_p1x5k"]
 [ext_resource type="Texture2D" uid="uid://d3p2cycdc84hq" path="res://Art/icon_filters.png" id="4_k1g1d"]
 
-[node name="screen_main_menu" type="CanvasLayer"]
+[node name="screen_main_menu" type="CanvasLayer" unique_id=389931233]
 script = ExtResource("1_nexgn")
 
-[node name="BG" type="Panel" parent="."]
+[node name="BG" type="Panel" parent="." unique_id=73705859]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,14 +18,14 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="art" type="TextureRect" parent="BG"]
+[node name="art" type="TextureRect" parent="BG" unique_id=484404023]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.133
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.133
-offset_top = 294.64
-offset_bottom = 771.359
+anchor_bottom = 0.5
+offset_top = -360.0
+offset_bottom = 272.813
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
@@ -33,111 +33,112 @@ texture = ExtResource("1_7mw7c")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="BG"]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="BG" unique_id=334186869]
+layout_mode = 0
 anchor_top = 0.133
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 0.639999
+offset_left = -15.0
+offset_top = -30.36
+offset_right = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_right = 60
 
-[node name="cont_menu" type="VBoxContainer" parent="BG/MarginContainer"]
+[node name="cont_menu" type="VBoxContainer" parent="BG/MarginContainer" unique_id=563121511]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="lbl_title" type="Label" parent="BG/MarginContainer/cont_menu"]
+[node name="lbl_title" type="Label" parent="BG/MarginContainer/cont_menu" unique_id=542270174]
 layout_mode = 2
 theme_type_variation = &"Label_Title"
-text = "LIFE CARDS"
+text = "DEEP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lbl_subtitle" type="Label" parent="BG/MarginContainer/cont_menu"]
-custom_minimum_size = Vector2(0, 80)
+[node name="spacer4" type="Control" parent="BG/MarginContainer/cont_menu" unique_id=1198669669]
 layout_mode = 2
-theme_type_variation = &"Label_Subtitle"
-text = "Connect deeper"
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.35
+
+[node name="lbl_title2" type="Label" parent="BG/MarginContainer/cont_menu" unique_id=1695128717]
+layout_mode = 2
+theme_type_variation = &"Label_Title"
+text = "TALK"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
-[node name="spacer4" type="Control" parent="BG/MarginContainer/cont_menu"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="spacer3" type="Control" parent="BG/MarginContainer/cont_menu"]
+[node name="spacer3" type="Control" parent="BG/MarginContainer/cont_menu" unique_id=1223574904]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="cont_btns_bg" type="PanelContainer" parent="BG/MarginContainer/cont_menu"]
+[node name="cont_btns_bg" type="PanelContainer" parent="BG/MarginContainer/cont_menu" unique_id=86934308]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="cont_btns" type="HBoxContainer" parent="BG/MarginContainer/cont_menu/cont_btns_bg"]
+[node name="cont_btns" type="HBoxContainer" parent="BG/MarginContainer/cont_menu/cont_btns_bg" unique_id=1032583163]
 layout_mode = 2
 alignment = 1
 
-[node name="spacer3" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="spacer3" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=2102831834]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="btn_help" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="btn_help" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=1081461934]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("2_gstxq")
 icon_alignment = 1
 
-[node name="spacer4" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="spacer4" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=1050781352]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="btn_settings" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="btn_settings" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=1689821558]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("2_p1x5k")
 icon_alignment = 1
 
-[node name="spacer5" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="spacer5" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=1456637686]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="btn_filter" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="btn_filter" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=1278239882]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("4_k1g1d")
 icon_alignment = 1
 
-[node name="spacer6" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="spacer6" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=239501705]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="btn_play" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="btn_play" type="Button" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=1259598991]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("1_jjcyo")
 icon_alignment = 1
 
-[node name="spacer7" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns"]
+[node name="spacer7" type="Control" parent="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns" unique_id=1090247282]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 
-[node name="spacer5" type="Control" parent="BG/MarginContainer/cont_menu"]
+[node name="spacer5" type="Control" parent="BG/MarginContainer/cont_menu" unique_id=222857230]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
+size_flags_stretch_ratio = 1.15
 
 [connection signal="pressed" from="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns/btn_help" to="." method="_on_btn_help_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns/btn_settings" to="." method="_on_btn_settings_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1f7oecpsrav"]
+[gd_scene format=3 uid="uid://d1f7oecpsrav"]
 
 [ext_resource type="Script" uid="uid://44kwvh664crx" path="res://Game/card_menu.gd" id="1_6yltm"]
 [ext_resource type="Texture2D" uid="uid://dixd08ecsoslj" path="res://Art/icon_minus.png" id="2_fcmxo"]
@@ -8,7 +8,7 @@
 font_size = 68
 font_color = Color(0.0699425, 0.148939, 0.185547, 1)
 
-[node name="BG" type="PanelContainer"]
+[node name="BG" type="PanelContainer" unique_id=1139260814]
 offset_top = -302.0
 offset_right = 594.0
 grow_horizontal = 2
@@ -17,65 +17,65 @@ pivot_offset = Vector2(0, 302)
 theme_type_variation = &"PanelContainer_2"
 script = ExtResource("1_6yltm")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1165098994]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="cont_menu" type="VBoxContainer" parent="MarginContainer"]
+[node name="cont_menu" type="VBoxContainer" parent="MarginContainer" unique_id=1695369747]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/cont_menu"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/cont_menu" unique_id=1269039760]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"PanelContainer_Toggle"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/cont_menu/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/cont_menu/PanelContainer" unique_id=409592475]
 layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="btn_font_less" type="Button" parent="MarginContainer/cont_menu/PanelContainer/HBoxContainer"]
+[node name="btn_font_less" type="Button" parent="MarginContainer/cont_menu/PanelContainer/HBoxContainer" unique_id=1183630142]
 layout_mode = 2
 icon = ExtResource("2_fcmxo")
 
-[node name="Label" type="Label" parent="MarginContainer/cont_menu/PanelContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/cont_menu/PanelContainer/HBoxContainer" unique_id=1689858397]
 layout_mode = 2
 theme_type_variation = &"Label_Body"
 text = "Font size"
 label_settings = SubResource("LabelSettings_rbfgi")
 
-[node name="btn_font_more" type="Button" parent="MarginContainer/cont_menu/PanelContainer/HBoxContainer"]
+[node name="btn_font_more" type="Button" parent="MarginContainer/cont_menu/PanelContainer/HBoxContainer" unique_id=287908102]
 layout_mode = 2
 icon = ExtResource("3_44qlh")
 
-[node name="spacer8" type="Control" parent="MarginContainer/cont_menu"]
+[node name="spacer8" type="Control" parent="MarginContainer/cont_menu" unique_id=2045762026]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="btn_add_q" type="Button" parent="MarginContainer/cont_menu"]
+[node name="btn_add_q" type="Button" parent="MarginContainer/cont_menu" unique_id=917769375]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"Button_Text"
 text = "Add custom question"
 
-[node name="btn_delete_q" type="Button" parent="MarginContainer/cont_menu"]
+[node name="btn_delete_q" type="Button" parent="MarginContainer/cont_menu" unique_id=2026694611]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"Button_Text"
 text = "Delete this question"
 
-[node name="btn_shuffle deck" type="Button" parent="MarginContainer/cont_menu"]
+[node name="btn_shuffle deck" type="Button" parent="MarginContainer/cont_menu" unique_id=846743476]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"Button_Text"
 button_mask = 5
 text = "Shuffle deck"
 
-[node name="btn_goto_first" type="Button" parent="MarginContainer/cont_menu"]
+[node name="btn_goto_first" type="Button" parent="MarginContainer/cont_menu" unique_id=2143366472]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"Button_Text"

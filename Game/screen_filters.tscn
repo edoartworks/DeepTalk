@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://baumhp28csf0f"]
+[gd_scene format=3 uid="uid://baumhp28csf0f"]
 
 [ext_resource type="PackedScene" uid="uid://clyul6nuh52rm" path="res://Game/filter_toggle.tscn" id="1_7dq4n"]
 [ext_resource type="Script" uid="uid://bu4ygv85rjug4" path="res://Game/screen_filters.gd" id="1_7pc1o"]
 [ext_resource type="Texture2D" uid="uid://cfveb17qyderm" path="res://Art/icon_confirm.png" id="2_tqkps"]
 
-[node name="screen_filters" type="CanvasLayer"]
+[sub_resource type="LabelSettings" id="LabelSettings_xkh8s"]
+font_size = 76
+font_color = Color(0.99215686, 0.9764706, 0.9490196, 1)
+
+[node name="screen_filters" type="CanvasLayer" unique_id=944549288]
 script = ExtResource("1_7pc1o")
 
-[node name="BG" type="Panel" parent="."]
+[node name="BG" type="Panel" parent="." unique_id=1266266975]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="BG"]
+[node name="MarginContainer" type="MarginContainer" parent="BG" unique_id=1638458748]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.133
@@ -27,89 +31,91 @@ grow_vertical = 0
 theme_override_constants/margin_left = 90
 theme_override_constants/margin_right = 90
 
-[node name="cont_main" type="VBoxContainer" parent="BG/MarginContainer"]
+[node name="cont_main" type="VBoxContainer" parent="BG/MarginContainer" unique_id=619965655]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="lbl_title" type="Label" parent="BG/MarginContainer/cont_main"]
+[node name="lbl_title" type="Label" parent="BG/MarginContainer/cont_main" unique_id=1488450342]
 layout_mode = 2
-theme_type_variation = &"Label_Title"
+theme_type_variation = &"Label_Subtitle"
 text = "FILTERS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lbl_subtitle" type="Label" parent="BG/MarginContainer/cont_main"]
+[node name="lbl_subtitle" type="Label" parent="BG/MarginContainer/cont_main" unique_id=1527404204]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_type_variation = &"Label_Subtitle"
+theme_override_colors/font_color = Color(0.027, 0.17745, 0.18, 1)
+theme_override_font_sizes/font_size = 76
 text = "Customize your deck"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="spacer4" type="Control" parent="BG/MarginContainer/cont_main"]
+[node name="spacer4" type="Control" parent="BG/MarginContainer/cont_main" unique_id=2010033898]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="lbl_subtitle2" type="Label" parent="BG/MarginContainer/cont_main"]
+[node name="lbl_subtitle2" type="Label" parent="BG/MarginContainer/cont_main" unique_id=8407162]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_type_variation = &"Label_Body"
 text = "What type of questions 
 do you want to see?"
+label_settings = SubResource("LabelSettings_xkh8s")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="spacer5" type="Control" parent="BG/MarginContainer/cont_main"]
+[node name="spacer5" type="Control" parent="BG/MarginContainer/cont_main" unique_id=451495473]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="filter_toggle_1" parent="BG/MarginContainer/cont_main" instance=ExtResource("1_7dq4n")]
+[node name="filter_toggle_1" parent="BG/MarginContainer/cont_main" unique_id=110162316 instance=ExtResource("1_7dq4n")]
 layout_mode = 2
 display_text = "Light and fun"
 filter_key = "1"
 filter_enabled = true
 
-[node name="filter_toggle_2" parent="BG/MarginContainer/cont_main" instance=ExtResource("1_7dq4n")]
+[node name="filter_toggle_2" parent="BG/MarginContainer/cont_main" unique_id=935559967 instance=ExtResource("1_7dq4n")]
 layout_mode = 2
 display_text = "Reflective"
 filter_key = "2"
 filter_enabled = true
 
-[node name="filter_toggle_3" parent="BG/MarginContainer/cont_main" instance=ExtResource("1_7dq4n")]
+[node name="filter_toggle_3" parent="BG/MarginContainer/cont_main" unique_id=1446374388 instance=ExtResource("1_7dq4n")]
 layout_mode = 2
 display_text = "Deep"
 filter_key = "3"
 
-[node name="filter_toggle_4" parent="BG/MarginContainer/cont_main" instance=ExtResource("1_7dq4n")]
+[node name="filter_toggle_4" parent="BG/MarginContainer/cont_main" unique_id=1437432910 instance=ExtResource("1_7dq4n")]
 layout_mode = 2
 display_text = "Very deep"
 filter_key = "4"
 
-[node name="spacer6" type="Control" parent="BG/MarginContainer/cont_main"]
+[node name="spacer6" type="Control" parent="BG/MarginContainer/cont_main" unique_id=488696744]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/cont_main"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/cont_main" unique_id=1715348928]
 layout_mode = 2
 
-[node name="spacer" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer"]
+[node name="spacer" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=274676075]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="btn_exit" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer"]
+[node name="btn_exit" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1655453195]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("2_tqkps")
 
-[node name="spacer2" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer"]
+[node name="spacer2" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=591427797]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.02
 
-[node name="spacer7" type="Control" parent="BG/MarginContainer/cont_main"]
+[node name="spacer7" type="Control" parent="BG/MarginContainer/cont_main" unique_id=1553183365]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.28

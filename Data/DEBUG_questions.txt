@@ -2,6 +2,7 @@
 1:
 - Level 1 question
 - Level 1 question2
+- Looking back to yourself as a child, what did you like about yourself in the way you used to act or speak?
 
 # Reflective
 2:

@@ -19,3 +19,6 @@ Keystore/
 
 # Windows
 *.lnk
+
+# Misc
+PlayStoreAssets/

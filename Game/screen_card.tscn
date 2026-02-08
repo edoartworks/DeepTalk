@@ -38,11 +38,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_s5oel")
 [node name="category_art" type="TextureRect" parent="BG" unique_id=1964285214]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.731
+anchor_top = 0.56700003
 anchor_right = 1.0
-anchor_bottom = 0.731
-offset_top = -0.07507324
-offset_bottom = 76.80005
+anchor_bottom = 0.56700003
+offset_top = 423.21997
+offset_bottom = 500.0951
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 8
 texture = ExtResource("5_4jntk")
 expand_mode = 5
@@ -205,7 +207,7 @@ vertical_alignment = 2
 [node name="spacer6" type="Control" parent="BG/cont_margin/VBoxContainer" unique_id=1764324922]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.09
+size_flags_stretch_ratio = 0.08
 
 [node name="card_menu_overlay" type="CanvasLayer" parent="." unique_id=1279513236]
 layer = 99

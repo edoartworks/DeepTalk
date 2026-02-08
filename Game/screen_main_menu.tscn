@@ -37,13 +37,11 @@ stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="BG" unique_id=334186869]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.117000006
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = 0.35998535
-offset_right = 15.0
+offset_left = -26.5
+offset_right = 26.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 60
@@ -52,6 +50,11 @@ theme_override_constants/margin_right = 60
 [node name="cont_menu" type="VBoxContainer" parent="BG/MarginContainer" unique_id=563121511]
 layout_mode = 2
 theme_override_constants/separation = 16
+
+[node name="spacer6" type="Control" parent="BG/MarginContainer/cont_menu" unique_id=1051590762]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
 
 [node name="lbl_title" type="Label" parent="BG/MarginContainer/cont_menu" unique_id=542270174]
 layout_mode = 2
@@ -63,7 +66,7 @@ vertical_alignment = 1
 [node name="spacer4" type="Control" parent="BG/MarginContainer/cont_menu" unique_id=1198669669]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 4.35
+size_flags_stretch_ratio = 1.05
 
 [node name="lbl_title2" type="Label" parent="BG/MarginContainer/cont_menu" unique_id=1695128717]
 layout_mode = 2
@@ -74,7 +77,8 @@ vertical_alignment = 1
 
 [node name="spacer3" type="Control" parent="BG/MarginContainer/cont_menu" unique_id=1223574904]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 10
+size_flags_stretch_ratio = 1.2
 
 [node name="cont_btns_bg" type="PanelContainer" parent="BG/MarginContainer/cont_menu" unique_id=86934308]
 layout_mode = 2
@@ -141,7 +145,7 @@ size_flags_stretch_ratio = 0.25
 [node name="spacer5" type="Control" parent="BG/MarginContainer/cont_menu" unique_id=222857230]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.15
+size_flags_stretch_ratio = 0.55
 
 [connection signal="pressed" from="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns/btn_help" to="." method="_on_btn_help_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/cont_menu/cont_btns_bg/cont_btns/btn_settings" to="." method="_on_btn_settings_pressed"]

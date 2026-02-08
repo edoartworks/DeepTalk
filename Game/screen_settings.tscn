@@ -113,7 +113,7 @@ size_flags_stretch_ratio = 0.02
 [node name="spacer7" type="Control" parent="BG/MarginContainer/cont_main" unique_id=960275384]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.1
+size_flags_stretch_ratio = 0.16
 
 [node name="FileDialog" type="FileDialog" parent="." unique_id=2042462796]
 title = "Open a File"

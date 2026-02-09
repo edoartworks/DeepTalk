@@ -26,12 +26,12 @@ func load_questions(path: String = QUESTIONS_USER_PATH) -> bool:
 	return true
 
 
-func import_questions(path: String) -> void:
+func import_questions(path: String) -> bool:
 	Debug.log("Importing questions...")
 	var file = FileAccess.open(QUESTIONS_USER_PATH, FileAccess.WRITE)
 	if not file:
 		Debug.log("Failed to open file: " + QUESTIONS_USER_PATH)
-		return
+		return false
 	
 	var deck_is_empty = true
 	for category in ALL_QUESTIONS.keys():
@@ -43,14 +43,14 @@ func import_questions(path: String) -> void:
 		Debug.log("Empty deck. Loading new questions...")
 		if not load_questions(path):
 			Debug.log("Questions failed to import")
-			return
+			return false
 	else:
 		# Merge old and new questions
 		Debug.log("Merging questions")
 		var new_questions = File.parse_questions_file(path)
 		if new_questions.is_empty():
 			Debug.log("Questions failed to import")
-			return
+			return false
 		
 		for category in ALL_QUESTIONS.keys():
 			if new_questions.has(category):
@@ -60,6 +60,7 @@ func import_questions(path: String) -> void:
 	_write_dict_to_file(ALL_QUESTIONS, file)
 	SignalBus.questions_imported.emit()
 	Debug.log("Questions imported from file")
+	return true
 
 
 func reset_deck_to_default() -> void:

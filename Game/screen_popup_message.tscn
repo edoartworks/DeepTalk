@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c7qtp5ode35qj"]
+
+[ext_resource type="Script" uid="uid://rcd43dqwcx6" path="res://Game/screen_popup_message.gd" id="1_0yh84"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdrgj"]
+bg_color = Color(0.9355469, 0.44169825, 0.3034206, 1)
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yh84"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r71dl"]
+font_size = 40
+font_color = Color(0.28235295, 0.28235295, 0.28235295, 1)
+
+[sub_resource type="Animation" id="Animation_8gavd"]
+resource_name = "Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.15, 0.15),
+"update": 0,
+"values": [0.0, -200.0]
+}
+
+[sub_resource type="Animation" id="Animation_0yh84"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.15, 0.15),
+"update": 0,
+"values": [-200.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r71dl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-180.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8gavd"]
+_data = {
+&"Close": SubResource("Animation_8gavd"),
+&"Open": SubResource("Animation_0yh84"),
+&"RESET": SubResource("Animation_r71dl")
+}
+
+[node name="ScreenPopupMessage" type="CanvasLayer" unique_id=2027458232]
+layer = 99
+script = ExtResource("1_0yh84")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1228768870]
+offset_left = 64.0
+offset_right = 862.0
+offset_bottom = 192.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vdrgj")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=262973448]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=784519628]
+layout_mode = 2
+alignment = 1
+
+[node name="spacer6" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1588934732]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="lbl_message" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1355252735]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Failed to import questions"
+label_settings = SubResource("LabelSettings_0yh84")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="lbl_message_err" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1575444159]
+visible = false
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_vertical = 6
+text = "(Check debug log for more info)"
+label_settings = SubResource("LabelSettings_r71dl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="spacer7" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=939457129]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Timer" type="Timer" parent="." unique_id=69807871]
+wait_time = 2.5
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1959368982]
+libraries/ = SubResource("AnimationLibrary_8gavd")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

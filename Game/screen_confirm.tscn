@@ -9,7 +9,7 @@ font_size = 94
 font_color = Color(0.99215686, 0.9764706, 0.9490196, 1)
 
 [node name="screen_confirm" type="CanvasLayer" unique_id=687436016]
-layer = 99
+layer = 98
 script = ExtResource("1_5eett")
 
 [node name="obscure" type="Panel" parent="." unique_id=1869341568]

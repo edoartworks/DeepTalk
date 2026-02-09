@@ -9,13 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://758uvwgicrj2" path="res://Art/icon_arrow.png" id="6_vlu3g"]
 [ext_resource type="PackedScene" uid="uid://d1f7oecpsrav" path="res://Game/card_menu.tscn" id="7_8jahr"]
 [ext_resource type="Script" uid="uid://b113hey6c53hu" path="res://Game/swipe_area.gd" id="7_8lvu1"]
-[ext_resource type="Texture2D" uid="uid://llvlin0jugsr" path="res://Art/icon_menu.png" id="7_dypvr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5oel"]
 bg_color = Color(0.941176, 0.909804, 0.835294, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6es5q"]
-bg_color = Color(1, 0.683554, 0.938661, 1)
 
 [node name="screen_card" type="CanvasLayer" unique_id=1437690645]
 script = ExtResource("1_6i3pm")
@@ -23,8 +19,6 @@ card_path = NodePath("BG/cont_margin/VBoxContainer/PanelContainer/card")
 menu_overlay_path = NodePath("card_menu_overlay")
 prog_bar_path = NodePath("BG/cont_margin/VBoxContainer/progress_bar_deck")
 categ_art_path = NodePath("BG/category_art")
-debug_toggle_log = NodePath("BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_toggle_debug_log")
-debug_log_lbl_path = NodePath("BG/cont_margin/VBoxContainer/cont_debug_log/lbl_debug_log")
 
 [node name="BG" type="Panel" parent="." unique_id=1819493226]
 anchors_preset = 15
@@ -144,12 +138,6 @@ layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("5_pv87m")
 
-[node name="btn_toggle_debug_log" type="Button" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=631714216]
-visible = false
-layout_mode = 2
-theme_type_variation = &"Button_Icon_BG"
-icon = ExtResource("7_dypvr")
-
 [node name="spacer5" type="Control" parent="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns" unique_id=132435792]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -186,31 +174,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="cont_debug_log" type="ScrollContainer" parent="BG/cont_margin/VBoxContainer" unique_id=602257840]
-visible = false
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.3
-theme_override_styles/panel = SubResource("StyleBoxFlat_6es5q")
-follow_focus = true
-
-[node name="lbl_debug_log" type="Label" parent="BG/cont_margin/VBoxContainer/cont_debug_log" unique_id=700413616]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "DEBUG"
-vertical_alignment = 2
-
 [node name="spacer6" type="Control" parent="BG/cont_margin/VBoxContainer" unique_id=1764324922]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.08
 
 [node name="card_menu_overlay" type="CanvasLayer" parent="." unique_id=1279513236]
-layer = 99
+layer = 97
 visible = false
 
 [node name="obscure" type="Panel" parent="card_menu_overlay" unique_id=1997528906]
@@ -235,7 +205,6 @@ pivot_offset = Vector2(0, 310)
 
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/HBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_menu" to="." method="_on_btn_menu_pressed"]
-[connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_toggle_debug_log" to="." method="_on_btn_toggle_debug_log_pressed"]
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_back" to="." method="_on_btn_back_pressed"]
 [connection signal="pressed" from="BG/cont_margin/VBoxContainer/cont_btns_bg/cont_btns/btn_fwd" to="." method="_on_btn_fwd_pressed"]
 [connection signal="gui_input" from="card_menu_overlay/obscure" to="." method="_on_obscure_gui_input"]

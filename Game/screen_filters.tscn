@@ -116,8 +116,9 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.02
 
 [node name="spacer7" type="Control" parent="BG/MarginContainer/cont_main" unique_id=1553183365]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.28
+size_flags_stretch_ratio = 0.25
 
 [connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]

@@ -4,15 +4,11 @@ extends CanvasLayer
 @export var menu_overlay_path :NodePath
 @export var prog_bar_path :NodePath
 @export var categ_art_path :NodePath
-@export var debug_toggle_log :NodePath
-@export var debug_log_lbl_path :NodePath
+
 var CARD :Node = null
 var MENU_OVERLAY :Node = null
 var PROG_BAR :ProgressBar = null
 var CATEG_ART :TextureRect = null
-var DEBUG_TOGGLE_LOG :Node = null
-var DEBUG_LOG :Node = null
-var DEBUG_SCROLL :Node = null
 
 var CAT_1_ART = load("res://Art/art_category_1.png")
 var CAT_2_ART = load("res://Art/art_category_2.png")
@@ -40,23 +36,7 @@ func _ready() -> void:
 	SignalBus.filters_screen_exit_pressed.connect(_init_UI)
 	SignalBus.cardmenu_goto_first.connect(_on_menu_goto_first_pressed)
 	
-	if Main.DEBUG_MODE:
-		DEBUG_TOGGLE_LOG = get_node(debug_toggle_log)
-		DEBUG_TOGGLE_LOG.visible = true
-		DEBUG_LOG = get_node(debug_log_lbl_path)
-		DEBUG_SCROLL = DEBUG_LOG.get_parent()
-		DEBUG_SCROLL.visible = true
-	
 	_init_UI.call_deferred() # deferred to wait for questions to be loaded
-
-
-func _process(_delta: float) -> void:
-	if Main.DEBUG_MODE:
-		# Update debug log
-		if DEBUG_LOG.text == Debug.DEBUG_LOG:
-			return
-		DEBUG_LOG.text = Debug.DEBUG_LOG
-		call_deferred("_debug_scroll_to_bottom")
 
 
 func _init_UI() -> void:
@@ -117,10 +97,6 @@ func _on_btn_back_pressed() -> void:
 		PROG_BAR.value -= 1
 
 
-func _debug_scroll_to_bottom():
-	DEBUG_SCROLL.set_deferred("scroll_vertical", DEBUG_SCROLL.get_v_scroll_bar().max_value)
-
-
 func _on_btn_menu_pressed() -> void:
 	MENU_OVERLAY.visible = true
 
@@ -176,7 +152,4 @@ func _on_menu_goto_first_pressed() -> void:
 		_set_card_to_first()
 	else:
 		Debug.log("Already at first questions")
-
-
-func _on_btn_toggle_debug_log_pressed() -> void:
-	DEBUG_SCROLL.visible = !DEBUG_SCROLL.visible
+	_hide_menu_overlay()

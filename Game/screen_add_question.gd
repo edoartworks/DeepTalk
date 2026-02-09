@@ -41,12 +41,13 @@ func _on_btn_confirm_pressed() -> void:
 	var q_text: String = ""
 	q_text = TXTED_ADD_QUESTION.text.strip_edges()
 	if q_text.is_empty():
-		Debug.log("Invalid question entered. Fix and try again")
+		Debug.log("Empty text box. Can't add empty question")
 		return
 	var selected_category = str(CAT_OPTION.get_selected_id() + 1)
 	
 	Deck.add_user_question(selected_category, q_text)
 	TXTED_ADD_QUESTION.text = ""
+	Popups.show_popup_msg(" New question added", 1)
 	SignalBus.hide_add_question_screen.emit()
 
 

@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bpndy5vl3e7o7" path="res://Game/screen_settings.gd" id="1_hu3bw"]
 [ext_resource type="PackedScene" uid="uid://c7wye7vxg5u13" path="res://Game/settings_toggle.tscn" id="2_6drmw"]
+[ext_resource type="Texture2D" uid="uid://758uvwgicrj2" path="res://Art/icon_arrow.png" id="2_fg3qn"]
 [ext_resource type="Texture2D" uid="uid://cfveb17qyderm" path="res://Art/icon_confirm.png" id="2_nu078"]
+[ext_resource type="PackedScene" uid="uid://738taw2kwluf" path="res://Game/screen_add_q_file.tscn" id="5_23i4b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik7ds"]
 content_margin_left = 10.0
@@ -15,7 +17,6 @@ corner_radius_bottom_left = 10
 
 [node name="screen_settings" type="CanvasLayer" unique_id=2005708276]
 script = ExtResource("1_hu3bw")
-file_dialog_path = NodePath("FileDialog")
 debug_log_lbl_path = NodePath("BG/MarginContainer/cont_main/cont_debug_log/lbl_debug_log")
 
 [node name="BG" type="Panel" parent="." unique_id=1700366053]
@@ -77,6 +78,7 @@ layout_mode = 2
 size_flags_horizontal = 5
 theme_type_variation = &"Button_Text_Menu"
 text = "Show debug log"
+alignment = 0
 
 [node name="spacer8" type="Control" parent="BG/MarginContainer/cont_main" unique_id=1280413457]
 layout_mode = 2
@@ -90,6 +92,7 @@ theme_type_variation = &"Button_Text_Menu"
 theme_override_colors/font_color = Color(0.8613281, 0.18063498, 0.02355194, 1)
 theme_override_colors/font_hover_color = Color(0.8613281, 0.18063498, 0.02355194, 1)
 text = "Reset deck to default"
+alignment = 0
 
 [node name="btn_del_all_q" type="Button" parent="BG/MarginContainer/cont_main" unique_id=1488400042]
 layout_mode = 2
@@ -98,24 +101,29 @@ theme_type_variation = &"Button_Text_Menu"
 theme_override_colors/font_color = Color(0.8613281, 0.18063498, 0.02355194, 1)
 theme_override_colors/font_hover_color = Color(0.8613281, 0.18063498, 0.02355194, 1)
 text = "Delete all questions"
+alignment = 0
 
 [node name="spacer9" type="Control" parent="BG/MarginContainer/cont_main" unique_id=880672333]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="btn_add_q" type="Button" parent="BG/MarginContainer/cont_main" unique_id=335096058]
-layout_mode = 2
-size_flags_horizontal = 5
-theme_type_variation = &"Button_Text_Menu"
-text = "Add custom question"
-
 [node name="add_q_from_file" type="Button" parent="BG/MarginContainer/cont_main" unique_id=1997244173]
 layout_mode = 2
 size_flags_horizontal = 5
 theme_type_variation = &"Button_Text_Menu"
 text = "Add new questions from .txt file"
+icon = ExtResource("2_fg3qn")
+alignment = 0
 autowrap_mode = 2
+icon_alignment = 2
+
+[node name="btn_add_q" type="Button" parent="BG/MarginContainer/cont_main" unique_id=335096058]
+layout_mode = 2
+size_flags_horizontal = 5
+theme_type_variation = &"Button_Text_Menu"
+text = "Add custom question"
+alignment = 0
 
 [node name="spacer6" type="Control" parent="BG/MarginContainer/cont_main" unique_id=1533829767]
 layout_mode = 2
@@ -126,7 +134,6 @@ size_flags_stretch_ratio = 0.05
 layout_mode = 2
 display_text = "Shuffle on play"
 setting_key = "shuffle_on_play"
-setting_value = true
 
 [node name="spacer5" type="Control" parent="BG/MarginContainer/cont_main" unique_id=972794009]
 custom_minimum_size = Vector2(0, 60)
@@ -155,20 +162,13 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.16
 
-[node name="FileDialog" type="FileDialog" parent="." unique_id=2042462796]
-title = "Open a File"
-ok_button_text = "Open"
-dialog_hide_on_ok = true
-file_mode = 0
-display_mode = 1
-access = 2
-filters = PackedStringArray("*.txt")
-use_native_dialog = true
+[node name="ScreenAddQFile" parent="." unique_id=1857663910 instance=ExtResource("5_23i4b")]
+visible = false
 
 [connection signal="pressed" from="BG/MarginContainer/cont_main/btn_show_debug" to="." method="_on_btn_show_debug_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/cont_main/btn_reset_deck" to="." method="_on_btn_reset_deck_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/cont_main/btn_del_all_q" to="." method="_on_btn_del_all_q_pressed"]
-[connection signal="pressed" from="BG/MarginContainer/cont_main/btn_add_q" to="." method="_on_btn_add_q_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/cont_main/add_q_from_file" to="." method="_on_add_q_from_file_pressed"]
+[connection signal="pressed" from="BG/MarginContainer/cont_main/btn_add_q" to="." method="_on_btn_add_q_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]
-[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="close_screen" from="ScreenAddQFile" to="." method="_on_screen_add_q_file_close_screen"]

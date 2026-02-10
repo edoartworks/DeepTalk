@@ -13,6 +13,6 @@ func show_confirm(parent: Node, callback: Callable):
 
 func show_popup_msg(message: String, info_lvl: int = 0):
 	var screen = screen_popup_msg.instantiate()
-	print (self.get_parent().get_child(-1))
+	# Add as child of main screen so stays on top
 	self.get_parent().get_child(-1).add_child(screen)
 	screen.show_screen(message, info_lvl)

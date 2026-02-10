@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://738taw2kwluf"]
+
+[ext_resource type="Texture2D" uid="uid://pm7346njvp7s" path="res://Art/icon_cancel.png" id="1_e66kq"]
+[ext_resource type="Script" uid="uid://b5hs113a7d11c" path="res://Game/screen_add_q_file.gd" id="1_ewfni"]
+[ext_resource type="FontFile" uid="uid://0g4x2ihxcd1c" path="res://Art/GlacialIndifference-Regular.otf" id="2_251tb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e66kq"]
+line_spacing = 4.0
+font = ExtResource("2_251tb")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="ScreenAddQFile" type="CanvasLayer" unique_id=1857663910]
+layer = 4
+script = ExtResource("1_ewfni")
+
+[node name="BG" type="Panel" parent="." unique_id=1682363554]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="BG" unique_id=1373708941]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015000001
+anchor_top = 0.075
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.2
+offset_top = 0.5
+grow_horizontal = 2
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_right = 90
+
+[node name="cont_main" type="VBoxContainer" parent="BG/MarginContainer" unique_id=546995761]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="lbl_title" type="Label" parent="BG/MarginContainer/cont_main" unique_id=1369620560]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"Label_Subtitle"
+theme_override_font_sizes/font_size = 90
+text = "Add new questions from text file"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="spacer5" type="Control" parent="BG/MarginContainer/cont_main" unique_id=835596738]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+
+[node name="help_text1" type="Label" parent="BG/MarginContainer/cont_main" unique_id=218875985]
+custom_minimum_size = Vector2(500, 280)
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"Label_Body"
+text = "To correctly import new questions, you must create a .txt file that follows this format:"
+autowrap_mode = 3
+clip_text = true
+
+[node name="PanelContainer" type="PanelContainer" parent="BG/MarginContainer/cont_main" unique_id=742685759]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"PanelContainer_Toggle"
+
+[node name="help_text2" type="Label" parent="BG/MarginContainer/cont_main/PanelContainer" unique_id=257064509]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_vertical = 3
+text = "# Use hashtag for any comment
+# Use numbers 1 to 4 to put questions in different categories
+# Any new line starting with a hyphen - will be considered a new question
+
+1:
+- Nice fun question?
+- Another light question?
+2:
+- A reflective question?
+- Another one?
+3:
+- Deep question?
+4:
+- Very deep question?
+
+# You don't have to include all 4 categories."
+label_settings = SubResource("LabelSettings_e66kq")
+autowrap_mode = 3
+clip_text = true
+
+[node name="spacer7" type="Control" parent="BG/MarginContainer/cont_main" unique_id=1296468582]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.06
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/MarginContainer/cont_main" unique_id=1965052405]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="btn_cancel" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1463639018]
+layout_mode = 2
+theme_type_variation = &"Button_Icon_BG"
+icon = ExtResource("1_e66kq")
+
+[node name="spacer" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1651264584]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btn_import" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1083653179]
+layout_mode = 2
+theme_type_variation = &"Button_Icon_BG"
+text = "Import .txt file"
+icon_alignment = 2
+
+[node name="spacer2" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1524097103]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+
+[node name="spacer6" type="Control" parent="BG/MarginContainer/cont_main" unique_id=2033922244]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.08
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=219224601]
+title = "Import a text file"
+ok_button_text = "Import"
+dialog_hide_on_ok = true
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.txt")
+use_native_dialog = true
+
+[connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_cancel" to="." method="_on_btn_cancel_pressed"]
+[connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_import" to="." method="_on_btn_import_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

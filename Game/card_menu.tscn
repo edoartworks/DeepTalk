@@ -58,33 +58,37 @@ layout_mode = 2
 
 [node name="btn_add_q" type="Button" parent="MarginContainer/cont_menu" unique_id=917769375]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_type_variation = &"Button_Text"
 text = "Add custom question"
+alignment = 0
 
 [node name="btn_delete_q" type="Button" parent="MarginContainer/cont_menu" unique_id=2026694611]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_type_variation = &"Button_Text"
 text = "Delete this question"
+alignment = 0
 
-[node name="btn_shuffle deck" type="Button" parent="MarginContainer/cont_menu" unique_id=846743476]
+[node name="spacer9" type="Control" parent="MarginContainer/cont_menu" unique_id=1194517823]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-size_flags_horizontal = 4
-theme_type_variation = &"Button_Text"
-button_mask = 5
-text = "Shuffle deck"
 
 [node name="btn_goto_first" type="Button" parent="MarginContainer/cont_menu" unique_id=2143366472]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_type_variation = &"Button_Text"
 button_mask = 5
 text = "Go to first question"
+alignment = 0
+
+[node name="btn_shuffle deck" type="Button" parent="MarginContainer/cont_menu" unique_id=846743476]
+layout_mode = 2
+theme_type_variation = &"Button_Text"
+button_mask = 5
+text = "Shuffle deck"
+alignment = 0
 
 [connection signal="pressed" from="MarginContainer/cont_menu/PanelContainer/HBoxContainer/btn_font_less" to="." method="_on_btn_font_less_pressed"]
 [connection signal="pressed" from="MarginContainer/cont_menu/PanelContainer/HBoxContainer/btn_font_more" to="." method="_on_btn_font_more_pressed"]
 [connection signal="pressed" from="MarginContainer/cont_menu/btn_add_q" to="." method="_on_btn_add_q_pressed"]
 [connection signal="pressed" from="MarginContainer/cont_menu/btn_delete_q" to="." method="_on_btn_delete_q_pressed"]
-[connection signal="pressed" from="MarginContainer/cont_menu/btn_shuffle deck" to="." method="_on_btn_shuffle_deck_pressed"]
 [connection signal="pressed" from="MarginContainer/cont_menu/btn_goto_first" to="." method="_on_btn_goto_first_pressed"]
+[connection signal="pressed" from="MarginContainer/cont_menu/btn_shuffle deck" to="." method="_on_btn_shuffle_deck_pressed"]

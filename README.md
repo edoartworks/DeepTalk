@@ -2,6 +2,7 @@
 is a conversation card game to help you connect deeper with friends, lovers or strangers.
 
 There are 130+ questions, hand written by me. No AI involved!
+
 You can choose to customise your deck, by adding or removing levels of Depth. You can keep the conversation light and fun, or decide to go very deep.
 You also have the option to add custom questions, or remove questions that you don't like.
 

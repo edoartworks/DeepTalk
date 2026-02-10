@@ -23,6 +23,16 @@
 - Which movie or book would you like to experience again for the first time?
 - What do you think is considered normal today, but will be seen as immoral or barbaric in 100 years?
 - What do you think is the role of luck in someone's life?
+- If you had a day to spend with your clone, what would you do?
+- If you had the power to see the future, how would you use it?
+- If your life right now had a soundtrack, what kind of music would it play?
+- If you could teleport anywhere for just one meal, where would you go and what would you eat?
+- What's a small, ordinary moment from the past week that made you unexpectedly happy?
+- What was the last thing that you truly, deeply enjoyed?
+- Do you have any nicknames? Tell the story behind it.
+- Have you ever had any experience that you can't explain with logic?
+- If you could be the God of something, what would that be?
+- What's one chore that you enjoy doing? And what's one you hate?
 
 # Reflective
 2:
@@ -55,6 +65,12 @@
 - What’s a tradition or ritual that’s important to you?
 - What’s a goal you're working towards?
 - What do you think is important for living a fulfilling life?
+- Imagine that your life was made into a movie. Describe the initial scene.
+- What do you think makes you different from most other people?
+- How does money affect your happiness?
+- What’s something that makes you feel hopeful about the future?
+- Is there something about the current state of the world that makes you worry?
+- If you had an infinite amount of money, how would you use it?
 
 # Deep
 3:
@@ -68,7 +84,6 @@
 - What’s a courageous thing you’ve done?
 - What’s a personal value you think is underrated?
 - What’s something that makes you feel alive?
-- What’s something that makes you feel hopeful about the future?
 - What are some ways you like to get out of your comfort zone?
 - Is there an element of your life where you lack confidence?
 - What’s brought you here?
@@ -88,6 +103,12 @@
 - What’s one of the biggest risk you’ve ever taken? What did you learn?
 - What’s something you’ve learned from a difficult conversation?
 - What emotion have you been feeling most often lately, and what's it teaching you?
+- If you could re-experience any event of your life with your current knowledge, which one would it be?
+- What's something about human nature that you would change?
+- What do you do to keep developing as a person?
+- What fundamental aspects of yourself would you never want to change?
+- If you could control your dreams, what would you like to dream about tonight?
+- How do you feel about the place you grow up in?
 
 # Very deep
 4:
@@ -110,10 +131,11 @@
 - Briefly describe your relationship with your mum.
 - Briefly describe your relationship with your dad.
 - What’s something you’ve learned from a personal struggle or challenge?
-- What's an experience that made you see the world differently, and how did it change you?
+- What's an experience that made you see the world differently, and how did it affect you?
 - How do you cope with feelings of loneliness or isolation?
 - How do you define intimate love, and what role does it play in your life?
 - How do you think society's views on sex should change?
 - What role does sex play in your life?
 - How do you face loneliness?
 - What's a part of yourself you are learning to embrace?
+- Were there any specific moments in your life that fundamentally changed you?

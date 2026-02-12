@@ -67,7 +67,7 @@ func show_help_screen():
 
 
 func hide_help_screen():
-	if 	SCREEN_HELP.on_android_back_req():
+	if SCREEN_HELP.on_android_back_req():
 		SCREEN_HELP.visible = false
 
 
@@ -76,6 +76,11 @@ func show_settings_screen():
 
 
 func hide_settings_screen():
+	# HACK: implement a better way to handle all screens visibility
+	var screen_add_q_file = SCREEN_SETTINGS.get_node("ScreenAddQFile")
+	if screen_add_q_file and screen_add_q_file.visible == true:
+		screen_add_q_file.visible = false
+		return
 	SCREEN_SETTINGS.visible = false
 
 
@@ -88,7 +93,7 @@ func hide_filters_screen():
 
 
 func _on_android_back_request():
-	Debug.log("android back request")
+	#Debug.log("android back request")
 	var layers = get_tree().current_scene.get_children()
 	var highest_visible_layer_node = null
 	var highest_visible_layer = -1

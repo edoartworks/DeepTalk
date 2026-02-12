@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://ktkatts3phbm"]
+[gd_scene format=3 uid="uid://ktkatts3phbm"]
 
 [ext_resource type="Theme" uid="uid://fa3sqrgi1208" path="res://Art/th_custom01.theme" id="1_3pbqw"]
 [ext_resource type="Script" uid="uid://cxu6ivfubt5fu" path="res://Game/screen_add_question.gd" id="1_tx0tm"]
 [ext_resource type="Texture2D" uid="uid://pm7346njvp7s" path="res://Art/icon_cancel.png" id="3_mnbnh"]
 [ext_resource type="Texture2D" uid="uid://cfveb17qyderm" path="res://Art/icon_confirm.png" id="4_upuil"]
 
-[node name="screen_add_question" type="CanvasLayer"]
+[node name="screen_add_question" type="CanvasLayer" unique_id=1126128007]
 script = ExtResource("1_tx0tm")
 txted_add_question_path = NodePath("BG/cont_margin_main/cont_v_main/txted_add_question")
 cont_add_q_path = NodePath("BG/cont_margin_main")
 cat_option_btn_path = NodePath("BG/cont_margin_main/cont_v_main/HBoxContainer/OptionButton")
 
-[node name="BG" type="Panel" parent="."]
+[node name="BG" type="Panel" parent="." unique_id=941141682]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,37 +19,39 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"Panel_2"
 
-[node name="cont_margin_main" type="MarginContainer" parent="BG"]
+[node name="cont_margin_main" type="MarginContainer" parent="BG" unique_id=380833403]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.133
-anchor_right = 0.5
+anchor_top = 0.19100001
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -540.0
-offset_top = 0.639999
-offset_right = 540.0
-offset_bottom = -64.0
+offset_left = -6.0
+offset_top = 1.059967
+offset_right = 6.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_right = 90
 
-[node name="cont_v_main" type="VBoxContainer" parent="BG/cont_margin_main"]
+[node name="cont_v_main" type="VBoxContainer" parent="BG/cont_margin_main" unique_id=1140135264]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BG/cont_margin_main/cont_v_main"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/cont_margin_main/cont_v_main" unique_id=1815886415]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BG/cont_margin_main/cont_v_main/HBoxContainer"]
+[node name="Label" type="Label" parent="BG/cont_margin_main/cont_v_main/HBoxContainer" unique_id=1182551616]
 layout_mode = 2
 theme_type_variation = &"Label_Subtitle"
-theme_override_font_sizes/font_size = 110
-text = "Category:  "
+theme_override_font_sizes/font_size = 100
+text = "Choose a 
+category:  "
 vertical_alignment = 1
 
-[node name="OptionButton" type="OptionButton" parent="BG/cont_margin_main/cont_v_main/HBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="BG/cont_margin_main/cont_v_main/HBoxContainer" unique_id=444048249]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
 selected = 0
 item_count = 4
 popup/item_0/text = "Light and fun"
@@ -61,13 +63,12 @@ popup/item_2/id = 2
 popup/item_3/text = "Very deep"
 popup/item_3/id = 3
 
-[node name="spacer3" type="Control" parent="BG/cont_margin_main/cont_v_main"]
-custom_minimum_size = Vector2(0, 50)
+[node name="spacer3" type="Control" parent="BG/cont_margin_main/cont_v_main" unique_id=509054511]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="txted_add_question" type="TextEdit" parent="BG/cont_margin_main/cont_v_main"]
+[node name="txted_add_question" type="TextEdit" parent="BG/cont_margin_main/cont_v_main" unique_id=374140118]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
 placeholder_text = "type your question here"
 deselect_on_focus_loss_enabled = false
@@ -76,68 +77,41 @@ wrap_mode = 1
 caret_blink = true
 caret_multiple = false
 
-[node name="spacer4" type="Control" parent="BG/cont_margin_main/cont_v_main"]
+[node name="spacer4" type="Control" parent="BG/cont_margin_main/cont_v_main" unique_id=1418895382]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 
-[node name="cont_bottom" type="HBoxContainer" parent="BG/cont_margin_main/cont_v_main"]
+[node name="cont_bottom" type="HBoxContainer" parent="BG/cont_margin_main/cont_v_main" unique_id=15440385]
 layout_mode = 2
 
-[node name="spacer4" type="Control" parent="BG/cont_margin_main/cont_v_main/cont_bottom"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.25
-
-[node name="cont_btns_bg" type="PanelContainer" parent="BG/cont_margin_main/cont_v_main/cont_bottom"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="cont_btns" type="HBoxContainer" parent="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg"]
-layout_mode = 2
-
-[node name="spacer4" type="Control" parent="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg/cont_btns"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.25
-
-[node name="btn_cancel" type="Button" parent="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg/cont_btns"]
+[node name="btn_cancel" type="Button" parent="BG/cont_margin_main/cont_v_main/cont_bottom" unique_id=1127981835]
 layout_mode = 2
 theme = ExtResource("1_3pbqw")
+theme_type_variation = &"Button_Icon_BG"
 action_mode = 0
 icon = ExtResource("3_mnbnh")
 icon_alignment = 1
 
-[node name="spacer5" type="Control" parent="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg/cont_btns"]
+[node name="spacer5" type="Control" parent="BG/cont_margin_main/cont_v_main/cont_bottom" unique_id=1692947082]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.3
+size_flags_stretch_ratio = 0.25
 
-[node name="btn_confirm" type="Button" parent="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg/cont_btns"]
+[node name="btn_confirm" type="Button" parent="BG/cont_margin_main/cont_v_main/cont_bottom" unique_id=1393617203]
 layout_mode = 2
 theme = ExtResource("1_3pbqw")
+theme_type_variation = &"Button_Icon_BG"
 action_mode = 0
 icon = ExtResource("4_upuil")
 icon_alignment = 1
 
-[node name="spacer6" type="Control" parent="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg/cont_btns"]
+[node name="spacer6" type="Control" parent="BG/cont_margin_main/cont_v_main" unique_id=1696800751]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.25
-
-[node name="spacer5" type="Control" parent="BG/cont_margin_main/cont_v_main/cont_bottom"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.25
-
-[node name="spacer6" type="Control" parent="BG/cont_margin_main/cont_v_main"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.05
+size_flags_stretch_ratio = 0.1
 
-[connection signal="pressed" from="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg/cont_btns/btn_cancel" to="." method="_on_btn_cancel_pressed"]
-[connection signal="pressed" from="BG/cont_margin_main/cont_v_main/cont_bottom/cont_btns_bg/cont_btns/btn_confirm" to="." method="_on_btn_confirm_pressed"]
+[connection signal="pressed" from="BG/cont_margin_main/cont_v_main/cont_bottom/btn_cancel" to="." method="_on_btn_cancel_pressed"]
+[connection signal="pressed" from="BG/cont_margin_main/cont_v_main/cont_bottom/btn_confirm" to="." method="_on_btn_confirm_pressed"]

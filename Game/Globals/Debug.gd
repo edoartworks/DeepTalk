@@ -8,7 +8,6 @@ func log(text):
 	print(text)
 
 func set_win_half_res() -> void:
-	var current_size = DisplayServer.window_get_size()
 	DisplayServer.window_set_size(DEBUG_WIN_SIZE)
 	# Center window
 	var screen_size = DisplayServer.screen_get_size()

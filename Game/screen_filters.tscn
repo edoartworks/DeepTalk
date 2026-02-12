@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://clyul6nuh52rm" path="res://Game/filter_toggle.tscn" id="1_7dq4n"]
 [ext_resource type="Script" uid="uid://bu4ygv85rjug4" path="res://Game/screen_filters.gd" id="1_7pc1o"]
 [ext_resource type="Texture2D" uid="uid://cfveb17qyderm" path="res://Art/icon_confirm.png" id="2_tqkps"]
+[ext_resource type="Texture2D" uid="uid://xpkqv8b7000u" path="res://Art/art_category_1.png" id="4_0kbfr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xkh8s"]
 font_size = 76
@@ -110,15 +111,24 @@ layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("2_tqkps")
 
-[node name="spacer2" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=591427797]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.02
-
 [node name="spacer7" type="Control" parent="BG/MarginContainer/cont_main" unique_id=1553183365]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
+
+[node name="category_art" type="TextureRect" parent="BG" unique_id=1418617022]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.28
+anchor_right = 1.0
+anchor_bottom = 0.31300002
+offset_top = 0.7999878
+offset_bottom = 0.45507813
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+texture = ExtResource("4_0kbfr")
+expand_mode = 5
 
 [connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]

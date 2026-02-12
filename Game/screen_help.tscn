@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cwnlvil864wbg"]
 
-[ext_resource type="Texture2D" uid="uid://cfveb17qyderm" path="res://Art/icon_confirm.png" id="1_7ut6m"]
 [ext_resource type="Script" uid="uid://cdkoksjbi3i3d" path="res://Game/screen_help.gd" id="1_fbdoe"]
-[ext_resource type="Texture2D" uid="uid://blqmevr5wam4q" path="res://Art/icon_dots.png" id="2_tka4m"]
+[ext_resource type="Texture2D" uid="uid://pm7346njvp7s" path="res://Art/icon_cancel.png" id="2_3hmtp"]
+[ext_resource type="Texture2D" uid="uid://758uvwgicrj2" path="res://Art/icon_arrow.png" id="3_4nf6v"]
 
 [node name="screen_help" type="CanvasLayer" unique_id=511370939]
 layer = 2
@@ -91,24 +91,19 @@ clip_text = true
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="btn_more" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1837267882]
+[node name="btn_exit" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=327559064]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
-icon = ExtResource("2_tka4m")
+icon = ExtResource("2_3hmtp")
 
 [node name="spacer" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=921998619]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="btn_exit" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=327559064]
+[node name="btn_more" type="Button" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1837267882]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
-icon = ExtResource("1_7ut6m")
-
-[node name="spacer2" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1731041208]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.02
+icon = ExtResource("3_4nf6v")
 
 [node name="spacer6" type="Control" parent="BG/MarginContainer/cont_main" unique_id=1299506892]
 layout_mode = 2
@@ -221,7 +216,7 @@ size_flags_horizontal = 3
 [node name="btn_more_exit" type="Button" parent="screen_more/BG/MarginContainer/cont_menu/HBoxContainer" unique_id=629305772]
 layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
-icon = ExtResource("1_7ut6m")
+icon = ExtResource("2_3hmtp")
 
 [node name="spacer2" type="Control" parent="screen_more/BG/MarginContainer/cont_menu/HBoxContainer" unique_id=2000462203]
 layout_mode = 2
@@ -229,10 +224,11 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.02
 
 [node name="spacer6" type="Control" parent="screen_more/BG/MarginContainer/cont_menu" unique_id=37824111]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.11
+size_flags_stretch_ratio = 0.12
 
-[connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_more" to="." method="_on_btn_more_pressed"]
 [connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_exit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="BG/MarginContainer/cont_main/HBoxContainer/btn_more" to="." method="_on_btn_more_pressed"]
 [connection signal="pressed" from="screen_more/BG/MarginContainer/cont_menu/HBoxContainer/btn_more_exit" to="." method="_on_btn_more_exit_pressed"]

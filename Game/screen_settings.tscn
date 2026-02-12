@@ -151,11 +151,6 @@ layout_mode = 2
 theme_type_variation = &"Button_Icon_BG"
 icon = ExtResource("2_nu078")
 
-[node name="spacer2" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=176691470]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.02
-
 [node name="spacer7" type="Control" parent="BG/MarginContainer/cont_main" unique_id=960275384]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2

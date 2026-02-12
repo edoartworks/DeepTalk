@@ -1,0 +1,15 @@
+# Hashtags = Comment that will be ignored
+
+1:
+- Nice fun question
+- Another light question
+
+2:
+- A reflective question
+- Another one of level 2
+
+3:
+- Deep question
+
+4:
+- Very deep question

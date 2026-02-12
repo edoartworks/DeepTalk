@@ -118,11 +118,6 @@ theme_type_variation = &"Button_Icon_BG"
 text = "Import .txt file"
 icon_alignment = 2
 
-[node name="spacer2" type="Control" parent="BG/MarginContainer/cont_main/HBoxContainer" unique_id=1524097103]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.02
-
 [node name="spacer6" type="Control" parent="BG/MarginContainer/cont_main" unique_id=2033922244]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -130,7 +125,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.08
 
 [node name="FileDialog" type="FileDialog" parent="." unique_id=219224601]
-title = "Import a text file"
+title = "Open a File"
 ok_button_text = "Import"
 dialog_hide_on_ok = true
 file_mode = 0
